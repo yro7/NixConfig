@@ -10,7 +10,6 @@
       ./hardware-configuration.nix
 	<home-manager/nixos>
 	./home-manager.nix
-	./openvpn.nix
     ];
 
   # Close lid behaviour
@@ -113,7 +112,6 @@
 	gh
 	github-cli
 	neofetch
-	openvpn
   ];
 
   services.jellyfin = {

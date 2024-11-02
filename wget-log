@@ -1,0 +1,11 @@
+--2024-11-02 17:48:25--  https://raw.githubusercontent.com/OpenVPN/openvpn/refs/heads/master/sample/sample-config-files/server.conf
+Resolving raw.githubusercontent.com (raw.githubusercontent.com)... 2606:50c0:8001::154, 2606:50c0:8000::154, 2606:50c0:8003::154, ...
+Connecting to raw.githubusercontent.com (raw.githubusercontent.com)|2606:50c0:8001::154|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 10694 (10K) [text/plain]
+Saving to: ‘server.conf’
+
+server.conf                                  0%[                                                                                       ]       0  --.-KB/s               server.conf                                100%[======================================================================================>]  10.44K  --.-KB/s    in 0.002s  
+
+2024-11-02 17:48:25 (6.69 MB/s) - ‘server.conf’ saved [10694/10694]
+
