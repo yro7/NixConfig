@@ -9,7 +9,7 @@
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
 	<home-manager/nixos>
-	./home-manager.nix
+	./home-manager/home-manager.nix
 	./openvpn.nix
     ];
 
@@ -33,6 +33,10 @@
 
   # Set your time zone.
   time.timeZone = "America/New_York";
+
+  # 
+  programs.zsh.enable = true;
+  users.defaultUserShell = pkgs.zsh;
 
   # Select internationalisation properties.
   i18n.defaultLocale = "en_US.UTF-8";
@@ -66,9 +70,6 @@
  	packages = with pkgs; [];
  };
 
-  users.defaultUserShell = pkgs.zsh;
-  programs.zsh.enable = true;
-    
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
@@ -93,7 +94,6 @@
 	enable = true;
 	openFirewall = true;
   };
-
 
 
   # Some programs need SUID wrappers, can be configured further or are
