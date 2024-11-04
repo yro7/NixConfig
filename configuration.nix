@@ -10,7 +10,7 @@
       ./hardware-configuration.nix
 	<home-manager/nixos>
 	./home-manager/home-manager.nix
-	./openvpn.nix
+#	./openvpn.nix WIP 
     ];
 
   # Close lid behaviour
@@ -88,7 +88,9 @@
 	neofetch
 	openvpn
 	tmux	
+	tmate
   ];
+
 
   services.jellyfin = {
 	enable = true;
