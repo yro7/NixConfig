@@ -69,33 +69,6 @@
   users.defaultUserShell = pkgs.zsh;
   programs.zsh.enable = true;
     
-  home-manager.users.nix = { pkgs, ... } : {
-  	home.packages = [
-  		pkgs.atool
-  		pkgs.httpie
-  	];
-  	programs.bash.enable = true;
-	programs.zsh = {
-		enable = true;
-		enableCompletion = true;
-		autosuggestion.enable = true;
-		syntaxHighlighting.enable = true;
-
-		shellAliases = {
-			update = "sudo nixos-rebuild switch";
-			cdconfig = "cd /etc/nixos";
-			config = "sudo micro /etc/nixos/configuration.nix";
-		};
-		oh-my-zsh = {
-			enable = true;
-			plugins = ["git" "thefuck"];
-			theme = "robbyrussell";
-		};			
-	};
-  	home.stateVersion = "24.05";
-  };
-  
-
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
@@ -107,13 +80,13 @@
 	pkgs.jellyfin-web
 	pkgs.jellyfin-ffmpeg
 	zsh
-	vim
 	xclip
 	git
 	gh
 	github-cli
 	neofetch
 	openvpn
+	tmux	
   ];
 
   services.jellyfin = {
