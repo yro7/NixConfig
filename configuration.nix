@@ -89,6 +89,8 @@
 	openvpn
 	tmux	
 	tmate
+	upower
+	speedtest-cli
   ];
 
 

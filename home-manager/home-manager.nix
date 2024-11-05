@@ -42,11 +42,6 @@
         in {
           enable = true;
           extraConfig = confString;
-          shortcut = "a";
-          baseIndex = 1;
-          newSession = true;
-          escapeTime = 0;
-          secureSocket = false;
           plugins = with pkgs; [
             tmuxPlugins.better-mouse-mode
           ];
