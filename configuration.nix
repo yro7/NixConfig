@@ -10,7 +10,7 @@
       ./hardware-configuration.nix
 	<home-manager/nixos>
 	./home-manager/home-manager.nix
-#	./openvpn.nix WIP 
+	./openvpn/openvpn.nix
     ];
 
   # Close lid behaviour
@@ -91,6 +91,7 @@
 	tmate
 	upower
 	speedtest-cli
+	easy-rsa
   ];
 
 
