@@ -1,9 +1,11 @@
-# Edit this configuration file to define what should be installed on
-# your system.  Help is available in the configuration.nix(5) man page
-# and in the NixOS manual (accessible by running ‘nixos-help’).
+set-option -sa terminal-overrides ",xterm*:Tc"
+set -g mouse on
 
-{ config, pkgs, ... }:
+unbind C-b
+set -g prefix C-Space
+bind C-Space send-prefix
 
+<<<<<<< HEAD
 {
   imports =
     [ # Include the results of the hardware scan.
@@ -52,11 +54,22 @@
     LC_TELEPHONE = "en_US.UTF-8";
     LC_TIME = "en_US.UTF-8";
   };
+=======
+# Start windows and panes at 1, not 0
+set -g base-index 1
+set -g pane-base-index 1
+set-window-option -g pane-base-index 1
+set-option -g renumber-windows on
+>>>>>>> refs/remotes/origin/main
 
 
-  # Configure keymap in X11
-  console.keyMap = "fr";
+# Use Alt+ZQSD (WASD) keys without prefix key to switch panes
+bind -n M-q select-pane -L
+bind -n M-d select-pane -R
+bind -n M-z select-pane -U
+bind -n M-s select-pane -D
 
+<<<<<<< HEAD
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.nix = {
     isNormalUser = true;
@@ -93,39 +106,34 @@
 	speedtest-cli
 	easy-rsa
   ];
+=======
+# Use Alt+Arrow Keys keys without prefix key to switch panes
+bind -n M-Left select-pane -L
+bind -n M-Right select-pane -R
+bind -n M-Up select-pane -U
+bind -n M-Down select-pane -D
+>>>>>>> refs/remotes/origin/main
 
 
-  services.jellyfin = {
-	enable = true;
-	openFirewall = true;
-  };
+# Shift arrow to switch windows
+bind -n S-Left  previous-window
+bind -n S-Right next-window
 
 
-  # Some programs need SUID wrappers, can be configured further or are
-  # started in user sessions.
-  # programs.mtr.enable = true;
-  # programs.gnupg.agent = {
-  #   enable = true;
-  #   enableSSHSupport = true;
-  # };
+bind c killp
+bind Tab split-window -v -c "#{pane_current_path}"
+bind ':' split-window -h -c "#{pane_current_path}"
 
-  # List services that you want to enable:
+# Plugin section
 
-  # Enable the OpenSSH daemon.
-  services.openssh.enable = true;
+set -g @plugin 'tmux-plugins/tpm'
+set -g @plugin 'tmux-plugins/tmux-sensible'
+set -g @plugin 'dreamsofcode-io/catppuccin-tmux'
+set -g @plugin 'tmux-plugins/tmux-yank'
+set -g @plugin 'tmux-plugins/tmux-sidebar'
+set -g @catppuccin_flavour 'mocha'
 
-  # Open ports in the firewall.
-  networking.firewall.allowedTCPPorts = [ 8096 ];
-  # networking.firewall.allowedUDPPorts = [ ... ];
-  # Or disable the firewall altogether.
-  # networking.firewall.enable = false;
+set -g @sidebar-tree 'e'
 
-  # This value determines the NixOS release from which the default
-  # settings for stateful data, like file locations and database versions
-  # on your system were taken. It‘s perfectly fine and recommended to leave
-  # this value at the release version of the first install of this system.
-  # Before changing this value read the documentation for this option
-  # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
-  system.stateVersion = "24.05"; # Did you read the comment?
 
-}
+run '~/.tmux/plugins/tpm/tpm'
