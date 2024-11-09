@@ -11,6 +11,7 @@
 	<home-manager/nixos>
 	./home-manager/home-manager.nix
 #	./openvpn.nix WIP 
+	./tor.nix
     ];
 
   # Close lid behaviour
@@ -91,6 +92,7 @@
 	tmate
 	upower
 	speedtest-cli
+	
   ];
 
 
@@ -114,7 +116,7 @@
   services.openssh.enable = true;
 
   # Open ports in the firewall.
-  networking.firewall.allowedTCPPorts = [ 8096 ];
+  networking.firewall.allowedTCPPorts = [ 22 8096 ];
   # networking.firewall.allowedUDPPorts = [ ... ];
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;
