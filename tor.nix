@@ -12,6 +12,11 @@
 		    enable = true;
 		    role = "bridge";
 		  };
+	      settings = {
+  		 	 ORPort = 9001;
+  		 	 DirPort = 9030;
+    		 BridgeRelay = true;
+  		  };
 	};
 
 	services.snowflake-proxy = {
