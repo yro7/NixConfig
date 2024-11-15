@@ -93,6 +93,10 @@
 	upower
 	speedtest-cli
 	nyx
+	transmission
+	iftop
+	nload
+	lsof
   ];
 
 
@@ -117,7 +121,7 @@
 
   # Open ports in the firewall.
   # SSH, Jellyfin & Tor
-  networking.firewall.allowedTCPPorts = [ 22 8096 9001 9030 ];
+  networking.firewall.allowedTCPPorts = [ 22 3587 8096 9001 9030 43481];
   # networking.firewall.allowedUDPPorts = [ ... ];
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;
